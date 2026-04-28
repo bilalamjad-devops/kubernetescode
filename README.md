@@ -51,3 +51,8 @@ docker images
 docker run -itd -p 8080:5000 my-image
 ```
 
+Good, see logs:
+```docker
+docker logs containerid
+```
+
