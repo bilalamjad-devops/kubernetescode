@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 ---
 
-**Run the App**
+**Run the App:**
 
 Now, start the Flask server:
 ```bash
@@ -67,7 +67,8 @@ You should see output saying: `* Running on http://0.0.0.0:5000/`
 
 ---
 
-**How to View it in KillerCoda**
+**How to View it in KillerCoda:**
+
 KillerCoda runs in a browser. To see your app, you cannot just click "localhost." Instead:
 
 Please open port 8080 in KillerKoda.
