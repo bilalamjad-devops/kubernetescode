@@ -1,3 +1,5 @@
+# Local Development
+
 This is a Python application. In branch 1, we run the application locally.
 
 
@@ -25,9 +27,10 @@ Verify:
 ```bash
 git branch --show-current
 ```
-
+---
 
 **Set Up the Environment:**
+
 On KillerCoda (Ubuntu/Debian), run these commands to install the dependencies:
 
 Update and install python venv tool:
