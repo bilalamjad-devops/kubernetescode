@@ -1,29 +1,28 @@
-# --- STAGE 1: Builder ---
-# This stage installs the dependencies
+# syntax=docker/dockerfile:1
+
+# ---------- Stage 1: Build ----------
 FROM python:3.8-slim-buster AS builder
 
 WORKDIR /app
 
-# Install dependencies into a local folder (--user) to easily copy them later
 COPY requirements.txt .
+
+# Install dependencies into a separate folder
 RUN pip install --no-cache-dir --user -r requirements.txt
 
-
-# --- STAGE 2: Final Runtime ---
-# This is the actual image that will be pushed to Docker Hub
+# ---------- Stage 2: Runtime ----------
 FROM python:3.8-slim-buster
 
 WORKDIR /app
 
-# Copy only the installed python packages from the builder stage
-# Python installs --user packages in /root/.local
+# Copy installed dependencies from builder
 COPY --from=builder /root/.local /root/.local
+
+# Copy application code
 COPY . .
 
-# Update PATH so the system can find the installed Flask packages
+# Add local binaries to PATH
 ENV PATH=/root/.local/bin:$PATH
 
-# Expose the port Flask runs on
-EXPOSE 5000
-
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+# Run app
+CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
