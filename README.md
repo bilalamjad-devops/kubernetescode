@@ -56,3 +56,6 @@ Good, see logs:
 docker logs containerid
 ```
 
+How to access:
+
+Open port 8080 in KillerKoda 
