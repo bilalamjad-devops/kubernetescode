@@ -1,27 +1,61 @@
+This is a Python application. In branch 1, we run the application locally.
 
 
-### 1. Set Up the Environment
+Fork & Clone the repository:
+```bash
+ git clone https://github.com/bilalamjad-devops/kubernetescode.git
+```
+
+Change directory:
+```bash
+cd kubernetescode
+```
+
+See git branches:
+```bash
+git branch -a
+```
+
+Switch git branch:
+```bash
+git checkout branch1
+```
+
+Verify:
+```bash
+git branch --show-current
+```
+
+
+**Set Up the Environment:**
 On KillerCoda (Ubuntu/Debian), run these commands to install the dependencies:
 
+Update and install python venv tool:
 ```bash
-# Update and install python venv tool
 sudo apt update && sudo apt install -y python3-venv
+```
 
-# Create a virtual environment named 'venv'
+Create a virtual environment named 'venv':
+```bash
 python3 -m venv venv
+```
 
-# Activate the environment
+Activate the environment:
+```bash
 source venv/bin/activate
+```
 
-# Install your requirements
+Install your requirements
+
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-### 2. Run the App
-Now, start the Flask server:
+**Run the App**
 
+Now, start the Flask server:
 ```bash
 python3 app.py
 ```
@@ -30,11 +64,9 @@ You should see output saying: `* Running on http://0.0.0.0:5000/`
 
 ---
 
-### 4. How to View it in KillerCoda
+**How to View it in KillerCoda**
 KillerCoda runs in a browser. To see your app, you cannot just click "localhost." Instead:
 
-1.  Look for the **"Traffic/Ports"** icon or tab in the KillerCoda interface (usually at the top or side).
-2.  Select **"Access Port 5000"**.
-3.  A new tab will open showing your message: *"Please subscribe, like, and comment on this video, TY!!!"*
+Please open port 8080 in KillerKoda.
 
 
