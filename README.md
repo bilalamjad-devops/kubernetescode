@@ -53,6 +53,9 @@ minikube status
 
 Jenkins:
 
+In Jenkins, we work on 3 3 things; 
+
+Jenkins is used for CI. We work on 3 things; Plugins, Credentials and Job. 
 
 <!-- 1 -->
 
@@ -89,6 +92,20 @@ Password:
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
+Plugins:
+- Docker plugin  
+- Docker Pipeline
+- GitHub Integration Plugin
+- Parameterized trigger Plugin
+
+Credentials:
+
+- DockerHub
+- GitHub
+
+Job:
+
+We make 2 jobs
 
 ArgoCD:
 
@@ -116,15 +133,6 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 
 ---
 
-
-Jenkins plugins
-
-Install the following plugins for the demo.
-- Amazon EC2 plugin (No need to set up Configure Cloud after)
-- Docker plugin  
-- Docker Pipeline
-- GitHub Integration Plugin
-- Parameterized trigger Plugin
 
 
 
