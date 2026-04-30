@@ -10,7 +10,7 @@ node {
 
     stage('Build image') {
        // 👉 Replace 'Your-Docker-Hub-Username/test' with your actual Docker Hub "username/repo"
-       app = docker.build("bilalamjad-devops/test")
+       app = docker.build("bilalamjaddevops/test")
     }
 
     stage('Test image') {
