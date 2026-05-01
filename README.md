@@ -19,6 +19,9 @@ Jenkins is used for CI. We work on 3 things; Plugins, Credentials and Job.
 
 
 **Plugins**
+
+We are installing the following plugins.
+
 - Docker plugin  
 - Docker Pipeline
 - GitHub Integration Plugin
@@ -26,9 +29,19 @@ Jenkins is used for CI. We work on 3 things; Plugins, Credentials and Job.
 
 **Credentials**
 
+We are storing the following credentials.
+
 - DockerHub
 - GitHub
 
+
+DockerHub:
+
+We are storing DockerHub credentials in Jenkins so Jenkins can push docker image to our DockerHub account.
+
+GitHub:
+
+We are storing GitHub credentials in Jenkins so Jenkins can change tag of our docker image to our DockerHub account.
 **Job**
 
 We make 2 jobs
