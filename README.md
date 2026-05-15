@@ -149,35 +149,6 @@ Go to **Manage Jenkins → Credentials** and add:
 
 **Jenkinsfile** (in your code repo):
 
-```groovy
-pipeline {
-    agent any
-    environment {
-        DOCKERHUB_CRED = 'dockerhub-cred'
-        IMAGE_NAME = 'yourusername/python-app'
-    }
-    stages {
-        stage('Build & Push Docker Image') {
-            steps {
-                script {
-                    docker.withRegistry('', DOCKERHUB_CRED) {
-                        def image = docker.build("${IMAGE_NAME}:${env.BUILD_NUMBER}")
-                        image.push()
-                        image.push('latest')
-                    }
-                }
-            }
-        }
-        stage('Trigger Manifest Update') {
-            steps {
-                build job: 'updatemanifest', parameters: [
-                    string(name: 'DOCKERTAG', value: "${env.BUILD_NUMBER}")
-                ]
-            }
-        }
-    }
-}
-```
 
 ---
 
@@ -191,30 +162,6 @@ pipeline {
 
 **Jenkinsfile** (in Manifest repo):
 
-```groovy
-pipeline {
-    agent any
-    parameters {
-        string(name: 'DOCKERTAG', defaultValue: 'latest')
-    }
-    stages {
-        stage('Update Manifest') {
-            steps {
-                script {
-                    sh '''
-                        sed -i "s|image: .*|image: yourusername/python-app:${DOCKERTAG}|g" deployment.yaml
-                        git config user.name "Jenkins"
-                        git config user.email "jenkins@example.com"
-                        git add deployment.yaml
-                        git commit -m "Update image to ${DOCKERTAG}" || echo "No changes"
-                        git push origin main
-                    '''
-                }
-            }
-        }
-    }
-}
-```
 
 ---
 
