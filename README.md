@@ -1,8 +1,4 @@
-**✅ Improved & Professional Documentation**
-
----
-
-### **CI/CD Pipeline: Deploying a Simple Python Application using GitHub, Jenkins & ArgoCD (GitOps)**
+# Deploying a Simple Python Application using GitHub, Jenkins & ArgoCD (GitOps)**
 
 #### **Architecture Diagram**
 
