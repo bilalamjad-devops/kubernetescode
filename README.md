@@ -192,9 +192,4 @@ Access your application using the Service/NodePort or Ingress.
 - **Jenkins**: Continuous Integration & automation
 - **ArgoCD**: GitOps – No more manual `kubectl apply`
 
-Would you like me to also provide:
-- Sample Python app code + Dockerfile?
-- Complete Kubernetes manifests (Deployment + Service)?
-- ArgoCD Application YAML?
 
-Just say the word and I’ll add them!
